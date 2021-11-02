@@ -1,0 +1,39 @@
+ <div class="container" >
+
+
+  <div *ngIf="isAdmin===true">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">UserName</th>
+          <th scope="col">Email</th> 
+          <th scope="col">Create Date</th>  
+          <th scope="col">Action</th>
+          
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users, let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.username}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.createdAt}}</td>
+          <button class="btn btn-danger" (click)="onDelete(item._id)">Delete</button>
+          <button class="btn btn-primary" *ngIf="item.status ===true "  (click)="onBlock(item._id)">Block</button>
+          <button class="btn btn-primary" *ngIf="item.status ===false "  (click)="onUnBlock(item._id)">Un Block</button>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div *ngIf="isAdmin ===false">
+    <H2> this is page user</H2>
+  </div>
+  
+  
+ 
+</div>

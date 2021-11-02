@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-6 offset-md3-md mt-4">
+        <h3>Register</h3>
+
+       <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+        <div class="form-group">
+            <label for="registerUserName">UserName</label>
+            <input type="text" 
+            class="form-control" 
+            id="registerUserName"  name="username" ngModel required #username="ngModel"
+            placeholder="Enter UserName">
+           
+          </div>
+
+          <div class="form-group">
+              <label for="registerEmail">Email</label>
+              <input type="email" 
+              class="form-control" 
+              id="registerEmail"  name="email" ngModel required #email="ngModel"
+              placeholder="Enter Email">
+         </div>
+
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" 
+            class="form-control" 
+            id="registerPassword"  name="password" ngModel required #password="ngModel"
+            placeholder="Enter Password">
+         
+          </div>
+          <button type="submit" [disabled]="f.invalid"
+           class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i>
+          </button>
+
+       </form>
+           
+      
+
+    </div>
+</div>
